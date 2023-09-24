@@ -1,0 +1,4 @@
+!go!
+var_etr=65
+if=var,<,56,true,print=hi
+!end!
