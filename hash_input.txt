@@ -1,4 +1,3 @@
 !go!
-var_etr=8
-if=var,>,7,true,put.out=alb
+
 !end!
