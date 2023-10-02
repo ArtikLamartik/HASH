@@ -19,9 +19,8 @@ if first_word.lower() == "!go!":
     if last_word.lower() == "!end!":
         commands = words[1:-1]
         for command in commands:
-            if "var_etr=" in command:
-                var_etr = command.split("var_etr=")[1].split()[0]
-                var = var_etr
+            if "var=" in command:
+                var = command.split("var=")[1].split()[0]
             elif "show=" in command:
                 show = command.split("show=")[1].split()[0]
                 if show == "var":
@@ -136,6 +135,11 @@ if first_word.lower() == "!go!":
                                 file.write("false")
                             file.close()
                             pass
+            elif "new.l" in command:
+                with open("hash_output.txt", "a") as file:
+                    file.write("\n")
+                    file.close()
+                    pass
             else:
                 with open("hash_output.txt", "a") as file:
                     file.write("Invalid Syntax.")
