@@ -96,45 +96,67 @@ if first_word.lower() == "!go!":
                     file.close()
                     pass
             elif "wait=" in command:
-                wait = int(command.split("wait=")[1].split()[0])
+                wait = float(command.split("wait=")[1].split()[0])
                 time.sleep(wait)
             elif "if=" in command:
                 if_v = command.split("if=")[1].split()[0]
-                what_v, what_with_what_v, a_nr, trueness, what_to_do = map(str, if_v.split(","))
+                what_v, what_with_what_v, a_nr_txt, trueness, what_to_do = map(str, if_v.split(","))
+                result = False
                 if what_v == "var":
                     if not var:
                         with open("hash_output.txt", "a") as file:
                             file.write("Error: You forgot about the var.")
                             exit()
                     else:
-                        result = False
                         if trueness == "true":
                             if what_with_what_v == "=":
-                                result = var == a_nr
+                                result = var == a_nr_txt
                             elif what_with_what_v == ">":
-                                result = var > a_nr
+                                result = var > a_nr_txt
                             elif what_with_what_v == "<":
-                                result = var < a_nr
+                                result = var < a_nr_txt
                             elif what_with_what_v == "!=":
-                                result = var != a_nr
+                                result = var != a_nr_txt
                         if trueness == "false":
                             if what_with_what_v == "=":
-                                result = var != a_nr
+                                result = var != a_nr_txt
                             elif what_with_what_v == ">":
-                                result = var < a_nr
+                                result = var < a_nr_txt
                             elif what_with_what_v == "<":
-                                result = var > a_nr
+                                result = var > a_nr_txt
                             elif what_with_what_v == "!=":
-                                result = var == a_nr
+                                result = var == a_nr_txt
                         if "put.out=" in what_to_do:
                             put_out_v = what_to_do.split("put.out=")[1].split()[0]
-                        with open("hash_output.txt", "a") as file:
-                            if result == True:
-                                file.write(put_out_v)
-                            if result == False:
-                                file.write("false")
-                            file.close()
+                            with open("hash_output.txt", "a") as file:
+                                if result == True:
+                                    file.write(put_out_v)
+                                if result == False:
+                                    file.write("false")
+                                file.close()
                             pass
+                if what_v == "input":
+                    if not input_v:
+                        with open("hash_output.txt", "a") as file:
+                            file.write("Error: You forgot about the input.")
+                            exit()
+                    else:
+                        if trueness == "true":
+                            if what_with_what_v == "=":
+                                result = input_a == a_nr_txt
+                            elif what_with_what_v == "!=":
+                                result = input_a != a_nr_txt
+                        if trueness == "false":
+                            if what_with_what_v == "=":
+                                result = input_a != a_nr_txt
+                            elif what_with_what_v == "!=":
+                                result = input_a == a_nr_txt
+                        if "put.out=" in what_to_do:
+                            put_out_v = what_to_do.split("put.out=")[1].split()[0]
+                            with open("hash_output.txt", "a") as file:
+                                if result == True:
+                                    file.write(put_out_v)
+                                file.close()
             elif "new.l" in command:
                 with open("hash_output.txt", "a") as file:
                     file.write("\n")
