@@ -1,17 +1,21 @@
 from tkinter import *
 import time
-global inp
+import random
+import win32api
 with open("hash_input.txt", "r") as file:
     a = file.read()
     file.close()
     pass
 with open('hash_output.txt', 'w') as file:
     file.truncate(0)
+    file.close()
+    pass
 words = a.split()
 if not words:
     with open("hash_output.txt", "a") as file:
         file.write("Error: Input file is empty.")
         file.close()
+        pass
     exit()
 first_word = words[0]
 last_word = words[-1]
@@ -50,19 +54,19 @@ if first_word.lower() == "!go!":
                             file.close()
                         exit()
                     with open("hash_output.txt", "a") as file:
-                        file.write(w)
+                        file.write(str(w))
                         file.close()
                         pass
                     with open("hash_output.txt", "a") as file:
-                        file.write(x)
+                        file.write("\n" + str(x))
                         file.close()
                         pass
                     with open("hash_output.txt", "a") as file:
-                        file.write(y)
+                        file.write("\n" + str(y))
                         file.close()
                         pass
                     with open("hash_output.txt", "a") as file:
-                        file.write(z)
+                        file.write("\n" + str(z))
                         file.close()
                         pass
             elif "print=" in command:
@@ -74,9 +78,8 @@ if first_word.lower() == "!go!":
             elif "input=" in command:
                 input_v = command.split("input=")[1].split()[0]
                 input_a = input(input_v)
-            elif "rendom_num" in command:
+            elif "random_num" in command:
                 w = "3 random numbers"
-                import random
                 x = random.getrandbits(5)
                 y = random.getrandbits(7)
                 z = random.getrandbits(10)
@@ -91,10 +94,6 @@ if first_word.lower() == "!go!":
                     new_window["background"] = f"{bg_clr}"
                     new_window.geometry(f"{width}x{height}")
                     new_window.mainloop()
-                with open("hash_output.txt", "a") as file:
-                    file.write("Invalid Syntax.")
-                    file.close()
-                    pass
             elif "wait=" in command:
                 wait = float(command.split("wait=")[1].split()[0])
                 time.sleep(wait)
@@ -134,7 +133,29 @@ if first_word.lower() == "!go!":
                                 if result == False:
                                     file.write("false")
                                 file.close()
-                            pass
+                                pass
+                        if "s.var" in what_to_do:
+                            if not var:
+                                with open("hash_output.txt", "a") as file:
+                                    file.write("Error: You forgot about the var.")
+                                    exit()
+                            else:
+                                with open("hash_output.txt", "a") as file:
+                                    if result == True:
+                                        file.write(var)
+                                    file.close()
+                                    pass
+                        if "s.input" in what_to_do:
+                            if not input_a:
+                                with open("hash_output.txt", "a") as file:
+                                    file.write("Error: You forgot about the input.")
+                                    exit()
+                            else:
+                                with open("hash_output.txt", "a") as file:
+                                    if result == True:
+                                        file.write(input_a)
+                                    file.close()
+                                    pass
                 if what_v == "input":
                     if not input_v:
                         with open("hash_output.txt", "a") as file:
@@ -157,11 +178,71 @@ if first_word.lower() == "!go!":
                                 if result == True:
                                     file.write(put_out_v)
                                 file.close()
+                                pass
+                        if "s.var=" in what_to_do:
+                            if not var:
+                                with open("hash_output.txt", "a") as file:
+                                    file.write("Error: You forgot about the var.")
+                                    exit()
+                            else:
+                                with open("hash_output.txt", "a") as file:
+                                    if result == True:
+                                        file.write(var)
+                                    file.close()
+                                    pass
+                        if "s.input" in what_to_do:
+                            if not input_a:
+                                with open("hash_output.txt", "a") as file:
+                                    file.write("Error: You forgot about the input.")
+                                    exit()
+                            else:
+                                with open("hash_output.txt", "a") as file:
+                                    if result == True:
+                                        file.write(input_a)
+                                    file.close()
+                                    pass
             elif "new.l" in command:
                 with open("hash_output.txt", "a") as file:
                     file.write("\n")
                     file.close()
                     pass
+            elif "c." in command:
+                comment = command.split("c.")[1].split()[0]
+                if comment.endswith(";"):
+                    pass
+                else:
+                    with open("hash_output.txt", "a") as file:
+                        file.write("Error: At the end of comments You type ';'")
+                        file.close()
+                        pass
+            elif "clear;" in command:
+                with open('hash_output.txt', 'w') as file:
+                    file.truncate(0)
+                    file.close()
+                    pass
+            elif "even/odd=" in command:
+                def is_even(n):
+                    if int(n) % 2 == 0:
+                        return True
+                    else:
+                        return False
+                even_or_odd = command.split("even/odd=")[1].split()[0]
+                if int(even_or_odd) < 2147483649 and int(even_or_odd) > -2147483649:
+                    if is_even(even_or_odd):
+                        with open('hash_output.txt', 'a') as file:
+                            file.write(even_or_odd + " " + "is even")
+                            file.close()
+                            pass
+                    else:
+                        with open('hash_output.txt', 'a') as file:
+                            file.write(even_or_odd + " " + "is odd")
+                            file.close()
+                            pass
+                else:
+                    with open("hash_output.txt", "a") as file:
+                        file.write("Error: That number is too big! Or too small!")
+                        file.close()
+                        pass
             else:
                 with open("hash_output.txt", "a") as file:
                     file.write("Invalid Syntax.")
