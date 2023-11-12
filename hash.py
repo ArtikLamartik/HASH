@@ -1,7 +1,6 @@
 from tkinter import *
 import time
 import random
-import win32api
 with open("hash_input.txt", "r") as file:
     a = file.read()
     file.close()
