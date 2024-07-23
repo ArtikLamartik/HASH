@@ -5,4 +5,4 @@
 5. make a file in VSCode that has the .hash ending
 6. code in Hash in that file
 7. open terminal with ctrl+shift+` and run Hash {the file name}.hash
-*note: {} are not required when run*
+note: {} are not required when run
