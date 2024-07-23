@@ -6,4 +6,3 @@
 6. code in Hash in that file
 7. open terminal with ctrl+shift+` and run Hash {the file name}.hash
 8. {} are not required when run
-Tnk for working with us.
