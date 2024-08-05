@@ -1,0 +1,1 @@
+def IsPrime(x):\n\tif x <= 1:\n\t\treturn False\n\tif x <= 3:\n\t\treturn True\n\tif x%2 == 0 or x%3 == 0:\n\t\treturn False\n\ti = 5\n\twhile i * i <= x:\n\t\tif x%i == 0 or x%(i+2) == 0:\n\t\t\treturn False\n\t\ti += 6\n\treturn True
