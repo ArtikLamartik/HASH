@@ -31,33 +31,32 @@
 31. .lwr() -> .lower()
 32. over -> pass
 33. ranger -> range
-34. fory -> for
-35. stop -> break
-36. stwr: -> if __name__ === "__main__":
-37. true -> True
-38. false -> False
-39. none -> None
-40. #c. -> #
-41. ifnotif -> elif
-42. ifnot -> else
-43. into -> append
-44. +++ -> ' += 1'
-45. ++ -> ' += '
-46. --- -> ' -= 1'
-47. -- -> ' -= '
-48. ">>" -> >
-49. << -> <
-50. ">=>" -> >=
-51. <=< -> <=
-52. === -> ==
-53. =!= -> !=
-54. && -> and
-55. || -> or
-56. abc -> str
-57. nr -> int
-58. flt -> float
-59. lst -> list
-60. dct -> dict
-61. tup -> tuple
-62. hashgame -> pygame
-63. .Memory() -> memory_array = {}
+34. stop -> break
+35. stwr: -> if __name__ === "__main__":
+36. true -> True
+37. false -> False
+38. none -> None
+39. #c. -> #
+40. ifnotif -> elif
+41. ifnot -> else
+42. into -> append
+43. +++ -> ' += 1'
+44. ++ -> ' += '
+45. --- -> ' -= 1'
+46. -- -> ' -= '
+47. ">>" -> >
+48. << -> <
+49. ">=>" -> >=
+50. <=< -> <=
+51. === -> ==
+52. =!= -> !=
+53. && -> and
+54. || -> or
+55. abc -> str
+56. nr -> int
+57. flt -> float
+58. lst -> list
+59. dct -> dict
+60. tup -> tuple
+61. hashgame -> pygame
+62. .Memory() -> memory_array = {}
