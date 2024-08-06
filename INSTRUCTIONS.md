@@ -60,3 +60,4 @@
 60. dct -> dict
 61. tup -> tuple
 62. hashgame -> pygame
+63. .Memory() -> memory_array = {}
