@@ -3,5 +3,6 @@ def IntToRoman(num):
   ans = ""
   for k, v in m.items():
     while num >= v:
-      ans += k\n\t\t\tnum -= v
+      ans += k
+      num -= v
   return ans
