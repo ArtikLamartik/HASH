@@ -1,0 +1,2 @@
+def AbcToBinary(a):
+    return " ".join(format(ord(c), "08b") for c in a)
