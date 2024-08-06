@@ -1,0 +1,3 @@
+def BinaryToAbc(b):
+    binary_values = b.split(" ")
+    return "".join(chr(int(bv, 2)) for bv in binary_values)
