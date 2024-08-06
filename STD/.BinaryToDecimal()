@@ -1,2 +1,0 @@
-def BinaryToDecimal(b):
-    return int(b, 2)
