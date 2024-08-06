@@ -1,0 +1,2 @@
+def DecimalToBinary(d):
+    return bin(d).replace("0b", "")
