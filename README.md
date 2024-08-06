@@ -8,4 +8,3 @@
 8. {} are not required to run
 9. "" are not required to run
 10. -r is used to run, and -c is used to compile, it does not work with both
-11. the STD folder is nor required for download
