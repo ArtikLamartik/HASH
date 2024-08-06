@@ -1,4 +1,4 @@
-1. get:<var1>; -> import <var1>
+1. get:<var1>; -> import "<var1>"
 2. wait:<var1>; -> ATH.wait(<var1>)
 3. show:<var1>; -> print("<var1>")
 4. show:<var1>> -> print(<var1>)
