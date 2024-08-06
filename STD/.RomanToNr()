@@ -1,4 +1,4 @@
-def RomanToInt(s):
+def RomanToNr(s):
     Roman_Number_Dict_With_Values = {"i": 1, "v": 5, "x": 10, "l": 50, "c": 100, "d": 500, "m": 1000}
     Number_Minus_One = 0
     End_Number = 0
