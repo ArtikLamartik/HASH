@@ -26,37 +26,41 @@
 26. $var1$ = '$var2$';": "$var1$ = '$var2$'
 27. loopy $var1$; { -> while $var1$:
 28. func $var1$:$var2$; { -> def $var1$($var2$):
-29. .cnt() -> .count()
-30. .upr() -> .upper()
-31. .lwr() -> .lower()
-32. over -> pass
-33. ranger -> range
-34. stop -> break
-35. stwr: -> if __name__ === "__main__":
-36. true -> True
-37. false -> False
-38. none -> None
-39. #c. -> #
-40. ifnotif -> elif
-41. ifnot -> else
-42. into -> append
-43. +++ -> ' += 1'
-44. ++ -> ' += '
-45. --- -> ' -= 1'
-46. -- -> ' -= '
-47. ">>" -> >
-48. << -> <
-49. ">=>" -> >=
-50. <=< -> <=
-51. === -> ==
-52. =!= -> !=
-53. && -> and
-54. || -> or
-55. abc -> str
-56. nr -> int
-57. flt -> float
-58. lst -> list
-59. dct -> dict
-60. tup -> tuple
-61. hashgame -> pygame
-62. .Memory() -> memory_array = {}
+29. ify $var1$; { -> if $var1$:
+30. ifnotif $var1$; { -> elif $var1$:
+31. ifnot { -> else:
+32. .cnt() -> .count()
+33. .upr() -> .upper()
+34. .lwr() -> .lower()
+35. over -> pass
+36. ranger -> range
+37. stop -> break
+38. stwr: -> if __name__ === "__main__":
+39. true -> True
+40. false -> False
+41. none -> None
+42. #c. -> #
+43. ify -> if
+44. ifnotif -> elif
+45. ifnot -> else
+46. into -> append
+47. +++ -> ' += 1'
+48. ++ -> ' += '
+49. --- -> ' -= 1'
+50. -- -> ' -= '
+51. ">>" -> >
+52. << -> <
+53. ">=>" -> >=
+54. <=< -> <=
+55. === -> ==
+56. =!= -> !=
+57. && -> and
+58. || -> or
+59. abc -> str
+60. nr -> int
+61. flt -> float
+62. lst -> list
+63. dct -> dict
+64. tup -> tuple
+65. hashgame -> pygame
+66. .Memory() -> memory_array = {}
